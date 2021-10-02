@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import { Link } from "react-router-dom";
-
+import * as ReactBootStap from "react-bootstrap";
 
 class Navbar extends Component
 {
@@ -8,29 +8,25 @@ class Navbar extends Component
     render()
     {
         return(<React.Fragment>
-             <nav className="nav navbar-expand  navbar-light" style={{backgroundColor:'#e3f2fd'}}>
            
-           <div className="" id="navbarSupportedContent">
-                
-            <ul className=" navbar-nav ml-auto  ">
-               
-                    <li className="nav-item">
-                   <Link to="/cars"  className="nav-link text-dark" >Home</Link>
-                   
-                 
-                    </li>
-                    <div class="float-end">
-                    <li className="nav-item ">
-                    <Link to="/cars/add"  className="nav-link ml-auto">Add Car</Link>
-                 
-                    </li>
-                    </div>
-                </ul>
-            </div>
-           
-             </nav>
-            
+             <ReactBootStap.Navbar collapseOnSelect expand="lg" bg="danger" variant="dark">
+  <ReactBootStap.Container>
+  <ReactBootStap.Navbar.Brand href="#"><Link to="/cars"  className="nav-link text-white text-bold" >Home</Link></ReactBootStap.Navbar.Brand>
+  <ReactBootStap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <ReactBootStap.Navbar.Collapse id="responsive-navbar-nav">
+    <ReactBootStap.Nav className="me-auto">
+
+    </ReactBootStap.Nav>
+    <ReactBootStap.Nav>
+      <ReactBootStap.Nav.Link href="#deets"><Link to="/cars/add"  className="nav-link text-white  me-2">Add Car</Link></ReactBootStap.Nav.Link>
+    </ReactBootStap.Nav>
+  </ReactBootStap.Navbar.Collapse>
+  </ReactBootStap.Container>
+</ReactBootStap.Navbar>
+
+
         </React.Fragment>);
     }
 }
 export default Navbar;
+
